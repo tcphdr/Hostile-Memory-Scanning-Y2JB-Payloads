@@ -151,7 +151,3 @@ This technique enables **crash-free discovery of readable memory layouts** insid
   [https://github.com/Gezine/Y2JB](https://github.com/Gezine/Y2JB)
 
 ---
-
-## Disclaimer
-
-This project is intended for **research and educational purposes** related to memory safety, exploit mitigation, and platform behavior analysis.
