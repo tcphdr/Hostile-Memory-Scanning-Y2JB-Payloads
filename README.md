@@ -4,14 +4,7 @@
 
 This repository contains a set of minimal **Y2JB payloads** designed to safely probe *hostile or protected memory regions* on the PS5 **without triggering crashes** in the YouTube application.
 
-The payloads intentionally prioritize stability and simplicity:
-
-* Hardcoded values
-* No direct memory dereferencing
-* No crash-inducing behavior
-* Fully compatible with asynchronous JavaScript execution under Y2JB
-
-The goal is to determine **which regions of process memory are readable** while maintaining execution continuity inside a hostile WebKit environment.
+The payloads intentionally prioritize stability and simplicity with the goal to determine **which regions of process memory are readable** while maintaining execution continuity inside a hostile WebKit environment.
 
 ---
 
