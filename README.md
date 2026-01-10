@@ -1,4 +1,4 @@
-# Hostile Memory Scanning via `write()` (Y2JB Payloads)
+# Memory Scanning in Hostile Environments via `write()` (Y2JB Payloads)
 
 ## Overview
 
