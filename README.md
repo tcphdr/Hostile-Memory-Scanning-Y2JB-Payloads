@@ -148,13 +148,14 @@ This technique enables **crash-free discovery of readable memory layouts** insid
 ## Not a Vulnerability
 
 This is NOT a vulnerability.
-At first glance, this technique may appear to represent a class of memory disclosure or policy bypass. It does not.
-The behavior leveraged here is an intentional and well-defined property of the FreeBSD kernel’s copyin() / copyout() mechanisms. No security boundary is crossed, and no kernel or userspace security policy is violated.
+At first glance, this technique may appear to represent a class of memory disclosure or policy bypass, it does not. The behavior leveraged here is an intentional and well-defined property of the FreeBSD kernel’s copyin() / copyout() mechanisms. No security boundary is crossed, and no kernel or userspace security policy is violated.
 In a normal operating environment, write() may return EFAULT for a variety of reasons. In this context, however, the return value can be used pre-deterministically as a readability oracle:
-Readable memory → write() succeeds
-Unreadable or protected memory → write() returns EFAULT
-No crash occurs in either case
-Crucially, this does not grant access to protected memory contents, nor does it bypass XOM, ASLR, or kernel-enforced access controls. It merely allows userland code to distinguish between readable and unreadable regions without dereferencing them directly.
+
+```Readable memory → write() succeeds```
+OR
+```Unreadable or protected memory → write() returns EFAULT```
+
+No crash occurs in either case, crucially, this does not grant access to protected memory contents, nor does it bypass XOM, ASLR, or kernel-enforced access controls. It merely allows userland code to distinguish between readable and unreadable regions without dereferencing them directly.
 This approach is therefore best described as a safe memory probing technique, not a vulnerability or exploit primitive. It relies entirely on documented kernel behavior and operates fully within the constraints imposed by the operating system.
 
 ---
