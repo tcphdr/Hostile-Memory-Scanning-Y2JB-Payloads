@@ -145,6 +145,13 @@ This technique enables **crash-free discovery of readable memory layouts** insid
 
 ---
 
+## This is NOT a vulnerability.
+
+One might assume this is a class of vulnerability, but it technically isn't. This is because of the way the FreeBSD kernel handles copyin/copyout operations. We are not violating any security policy in place. 
+In a normal environment write() would return EFAULT for a number of things, in this case we can leverage it in a pre-deterministic manner to safely scan readable portions of memory, while skipping over the protected regions.
+
+---
+
 ## Requirements
 
 * **Y2JB for PS5**
