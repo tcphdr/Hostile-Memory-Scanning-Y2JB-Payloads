@@ -37,3 +37,9 @@ Only regions whose protection flags fall within `READABLE_PROTS` (`0x1`, `0x3`, 
 ### 4. Data Streaming
 Selected regions are read and sent in `0x400`-byte chunks via `syscall(SYSCALL.write)` directly to the open socket. If a chunk write returns an error mid-stream (stale mapping, race, etc.), a zeroed buffer of the same size is substituted to keep the receiver's byte offsets consistent.
 
+---
+
+# Requirements
+Y2JB framework by Gezine https://github.com/Gezine/Y2JB
+
+---
