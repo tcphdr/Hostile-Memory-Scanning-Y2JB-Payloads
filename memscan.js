@@ -1,6 +1,6 @@
 (async function() {
     try {
-        var LAPTOP_IP     = "10.100.1.200";
+        var LAPTOP_IP     = "YOUR_IP_HERE";
         var LAPTOP_PORT   = 9999;
         var CHUNK_SIZE    = 0x400n;
         var PAGE_SIZE     = 0x4000n;
